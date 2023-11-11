@@ -7,3 +7,23 @@ body {
   height: 100vh;
   overflow-y: auto;
 }
+
+
+
+.banner {
+  height: 320px;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+.cta-button {
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #3498db;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 10px;
+}

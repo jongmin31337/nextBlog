@@ -4,7 +4,13 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      'banner-image' : "url('/images/banner.jpg)",
+
+      colors: {
+        'white' : '#ffffff',
+      },
+    },
   },
   plugins: [],
 }
