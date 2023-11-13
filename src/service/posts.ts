@@ -11,6 +11,7 @@ export type Post = {
 }
 
 
+
 export async function getFeaturedPost(): Promise<Post[]> {
     return getAllPosts()
         .then(posts => posts.filter(post => post.featured)); 
@@ -29,3 +30,10 @@ export async function getPopularPost(): Promise<Post[]> {
         .then(posts => posts.filter(post => !post.featured)); 
 }
 
+export async function getPost(path : string): Promise<any> {
+    const newPath = `${path}.json`;
+    const filePath = path.join(process.cwd(), 'data/posts/', newPath);
+
+    console.log(filePath);
+    
+}
