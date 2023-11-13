@@ -10,7 +10,7 @@ export type Post = {
     featured: boolean;
 }
 
-
+export type PostData = Post & { content: string};
 
 export async function getFeaturedPost(): Promise<Post[]> {
     return getAllPosts()
@@ -30,10 +30,13 @@ export async function getPopularPost(): Promise<Post[]> {
         .then(posts => posts.filter(post => !post.featured)); 
 }
 
-export async function getPost(path : string): Promise<any> {
-    const newPath = `${path}.json`;
-    const filePath = path.join(process.cwd(), 'data/posts/', newPath);
+export async function getPostData(fileName : string): Promise<PostData> {
+    const filePath = path.join(process.cwd(), 'data', 'posts', `${fileName}.md`);
+    const metadata = await getAllPosts() 
+    .then(posts => posts.find(post => post.path === fileName));
+    if(!metadata) 
+        throw new Error(`${fileName}에 해당하는 포스트를 찾을 수 없습니다`);
 
-    console.log(filePath);
-    
+    const content = await readFile(filePath, 'utf-8');
+    return {...metadata, content};
 }
