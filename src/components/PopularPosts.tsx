@@ -3,7 +3,6 @@ import PostCarousel from './PostsCarousel';
 export default async function PopularPosts() {
     // 1. 모든 포스트 데이터를 읽어와야함
     const posts = await getPopularPost();
-    console.log(posts);
     
     // 2. 모든 포스트 데이터를 보여줌
     return <section className='my-4'>

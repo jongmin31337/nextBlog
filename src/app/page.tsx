@@ -8,8 +8,8 @@ export default function HomePage() {
     <>
     {/* <Hero /> */}
       <Banner />
-      <FeaturedPosts />
       <PopularPosts />
+      <FeaturedPosts />
     </>
   )
 }
