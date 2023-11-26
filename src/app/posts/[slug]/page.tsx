@@ -1,7 +1,6 @@
+import MarkdownViewer from "@/components/MarkdownViewer";
 import { getPostData } from "@/service/posts";
-import ReactMarkdown from 'react-markdown'
 
-import remarkGfm from 'remark-gfm';
 
 type Props = {
     params: {
@@ -14,8 +13,8 @@ export default async function PostPage({params: { slug }}: Props) {
 
     return (
         <>
-        {/* ReactMarkdown componet분리해보기 */}
-            <ReactMarkdown className='prose lg:prose-xl' remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
+            <h1>{post.title}</h1>
+            <MarkdownViewer content={post.content} />
         </>
     );
 }
