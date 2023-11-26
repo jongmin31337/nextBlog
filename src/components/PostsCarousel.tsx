@@ -9,7 +9,7 @@ type Props = { posts: Post[] };
 export default function PostCarousel({posts} : Props) {
     return (
         <ReactMultiCarousel>
-            {posts.map((post) => <li key={post.path}><PostCard post = {post} /></li>)}
+            {posts.map((post) => <div key={post.path}><PostCard post = {post} /></div>)}
         </ReactMultiCarousel>
     )
 }
