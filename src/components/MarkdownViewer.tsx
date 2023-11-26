@@ -38,4 +38,3 @@ export default function MarkdownViewer( {content}: Props ) {
     );
 }
 
->>>>>>> origin/main
